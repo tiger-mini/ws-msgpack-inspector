@@ -2,7 +2,7 @@
 
 提交 Edge（Partner Center）或 Chrome（开发者后台）时用：
 **英文部分整段复制**进 "Notes for certification"（Edge）/ "审核备注"（Chrome）栏；中文对照仅供自己核对，不用提交。
-隐私政策 URL 记得替换 `<PRIVACY_POLICY_URL>` 占位符。
+隐私政策 URL（已发布）：https://github.com/tiger-mini/ws-msgpack-inspector/blob/main/PRIVACY.md
 
 ---
 
@@ -57,7 +57,9 @@ core capture-and-display functionality.
   developer tools such as React Developer Tools.
 - The extension collects and transmits NOTHING. No server, no analytics,
   no tracking, no external network request of any kind. All decoding
-  happens locally inside the popup. Privacy policy: <PRIVACY_POLICY_URL>
+  happens locally inside the popup. Privacy policy:
+  https://github.com/tiger-mini/ws-msgpack-inspector/blob/main/PRIVACY.md
+  Source code is open at: https://github.com/tiger-mini/ws-msgpack-inspector
 
 === UI LANGUAGE ===
 
@@ -140,7 +142,7 @@ references, no remotely hosted modules, no eval() of remote strings.
 
 ## 提交前自查
 
-- [ ] `<PRIVACY_POLICY_URL>` 已替换成 PRIVACY.md 的公网地址
+- [x] 隐私政策已发布：https://github.com/tiger-mini/ws-msgpack-inspector/blob/main/PRIVACY.md
 - [ ] 用备注里的步骤自己真机走一遍（装扩展 → websocketking → echo 服务器 → 原始帧有数据）
 - [ ] listing 截图用 `snapshoot/store/`（1280×800）
 - [ ] 商店描述 ≥250 字符（Edge 硬性要求，manifest 里那句不够长）
