@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="popup">
+  <header>
+    <div class="row">
+      <strong class="brand">WS MessagePack Inspector</strong>
+      <span style="flex:1"></span>
+<!--      <button id="fullscreen" class="icon-btn"></button>-->
+      <button id="sort" class="icon-btn"></button>
+      <button id="refresh" class="icon-btn"></button>
+      <button id="clear" class="icon-btn"></button>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <nav>
+    <button data-view="values" class="active">点位最新值</button>
+    <button data-view="subs">订阅点位</button>
+    <button data-view="raw">原始帧</button>
+  </nav>
+
+  <div class="row search-row">
+    <select id="conn" title="按 WebSocket 连接过滤"></select>
+    <input type="search" id="search" placeholder="搜索点位 / 设备前缀，如 RDRY1# 或 ONOFF_SP" />
+  </div>
+
+  <div class="content" id="content"></div>
+
+  <div class="hint">首次使用：安装后请<b>刷新目标页面</b>，让插件在建连前 hook 到 WebSocket。</div>
+
+  <script src="msgpack.js"></script>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+  <script src="popup-init.js"></script>
+</body>
+</html>

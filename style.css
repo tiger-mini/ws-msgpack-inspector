@@ -1,0 +1,230 @@
+:root {
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font:
+    12px/1.5 -apple-system,
+    'Segoe UI',
+    'Microsoft YaHei',
+    sans-serif;
+  background: #1e1e22;
+  color: #d6d6da;
+  display: flex;
+  flex-direction: column;
+}
+/* popup 固定尺寸；fullscreen 占满窗口 */
+body.popup {
+  width: 480px;
+  height: 580px;
+}
+body.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  padding: 8px 12px;
+  border-bottom: 1px solid #33333a;
+  flex: none;
+}
+.row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.brand {
+  color: #5fec89;
+}
+.dim {
+  color: #77777f;
+}
+.stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  color: #9a9aa2;
+}
+.stats b {
+  color: #5fec89;
+  font-weight: 600;
+}
+
+button {
+  background: #2c2c33;
+  color: #d6d6da;
+  border: 1px solid #44444c;
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+button:hover {
+  background: #35353d;
+}
+button.active {
+  background: #5fec89;
+  color: #10241a;
+  border-color: #5fec89;
+}
+.icon-btn {
+  padding: 4px 8px;
+}
+.icon-btn svg {
+  display: block;
+}
+
+/* 每条消息里的小复制按钮 */
+.mini {
+  background: transparent;
+  border: none;
+  padding: 2px 4px;
+  color: #8a8a92;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 0;
+}
+.mini:hover {
+  background: #35353d;
+  color: #d6d6da;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px 0;
+  flex: none;
+}
+.search-row {
+  padding: 6px 12px 0;
+  flex: none;
+}
+input[type='search'] {
+  flex: 1;
+  background: #2c2c33;
+  color: #d6d6da;
+  border: 1px solid #44444c;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 12px;
+  outline: none;
+}
+input[type='search']:focus {
+  border-color: #5fec89;
+}
+select#conn {
+  background: #2c2c33;
+  color: #d6d6da;
+  border: 1px solid #44444c;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 12px;
+  outline: none;
+  max-width: 190px;
+  max-height: 100px;
+  cursor: pointer;
+}
+select#conn:focus {
+  border-color: #5fec89;
+}
+
+.content {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 12px;
+}
+
+/* 点位最新值：key | value | 复制 */
+.kv {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2px 10px;
+  align-items: center;
+}
+.kv .k {
+  color: #b7c6ff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kv .v {
+  color: #5fec89;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+body.fullscreen .kv {
+  grid-template-columns: minmax(280px, 1fr) auto auto;
+  max-width: 900px;
+}
+
+/* 订阅 / 原始帧 */
+.row-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sub-item {
+  margin-bottom: 10px;
+}
+.sub-item .title {
+  color: #ffc047;
+}
+.sub-item .tags {
+  color: #9a9aa2;
+  word-break: break-all;
+  margin-top: 3px;
+}
+.raw-item {
+  margin-bottom: 6px;
+  border-bottom: 1px solid #2a2a30;
+  padding-bottom: 4px;
+}
+.raw-item .ts {
+  color: #77777f;
+  font-variant-numeric: tabular-nums;
+}
+.dir-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.dir-tag svg {
+  display: block;
+}
+pre {
+  margin: 3px 0 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #c9c9d0;
+}
+
+/* 双击复制：无背景反馈，双击触发本行右上角复制图标(图标变 ✓)。
+   values 的 k/v 禁选，避免双击选中残留；raw/subs 的正文保留可手动划选局部。 */
+.kv .k,
+.kv .v {
+  user-select: none;
+}
+
+.empty {
+  color: #77777f;
+  text-align: center;
+  margin-top: 48px;
+}
+.hint {
+  color: #77777f;
+  padding: 6px 12px;
+  font-size: 11px;
+  border-top: 1px solid #33333a;
+  flex: none;
+}
+.hint b {
+  color: #b7c6ff;
+}
